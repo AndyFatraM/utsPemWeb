@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kebudayaan Reog Ponorogo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        header {
+            background-color: #0f0f0f;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 50px;
+            margin-right: 10px;
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+            cursor: pointer;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #2c5f2d;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            top: 30px;
+            left: 0;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        .dropdown-content a:hover {
+            background-color: #3e8e41;
+        }
+        main {
+            text-align: center;
+            padding: 20px;
+        }
+        main img {
+            width: 50%;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./Assets/img/icon.png" alt="Logo Reog Ponorogo">
+            <h1>Reog Ponorogo</h1>
+        </div>
+        <nav>
+            <div class="dropdown">
+                <a class="menu-dropdown">Menu</a>
+                <div class="dropdown-content">
+                    <a href="#sejarah">Sejarah</a>
+                    <a href="#tarian">Tarian</a>
+                    <a href="#galeri">Galeri</a>
+                </div>
+            </div>
+            <a href="#tentang-kami">Tentang Kami</a>
+            <a href="#kontak">Kontak</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Selamat Datang di Kebudayaan Reog Ponorogo</h2>
+        <p>Temukan informasi tentang sejarah, seni tari, dan galeri foto Reog Ponorogo.</p>
+        <img src="/Assets/img/reogpatra.png" alt="Reog Ponorogo">
+        <section id="sejarah">
+            <h3>Sejarah</h3>
+            <p>Reog Ponorogo adalah seni budaya khas yang berasal dari Kabupaten Ponorogo, Jawa Timur. 
+             Seni ini menggambarkan keperkasaan dan keindahan budaya lokal.
+             Tarian ini menampilkan sosok topeng macan berhias bulu merak berukuran sangat besar. Topeng tersebut dikenakan penari dengan gerakan meliuk-liuk. Pertunjukan Reog Ponorogo sering ditampilkan di berbagai acara, seperti pernikahan, perayaan hari jadi, hingga festival kesenian.</p>
+        </section>
+        <section id="tarian">
+            <h3>Tarian</h3>
+            <p>Tarian Reog memiliki gerakan khas yang dibawakan oleh warok dan jathil dengan iringan musik gamelan.</p>
+        </section>
+        <section id="galeri">
+            <h3>Galeri</h3>
+            <p>Lihat foto-foto menarik dari berbagai pertunjukan Reog Ponorogo.</p>
+        </section>
+    </main>
+    <footer>
+        © 2024 Kebudayaan Reog Ponorogo. Semua hak dilindungi.
+    </footer>
+
+    <script>
+        // Menambahkan logika dropdown menggunakan JavaScript
+        const menuDropdown = document.querySelector('.menu-dropdown');
+        const dropdownContent = document.querySelector('.dropdown-content');
+
+        // Event listener untuk membuka atau menutup dropdown
+        menuDropdown.addEventListener('click', () => {
+            const isVisible = dropdownContent.style.display === 'block';
+            dropdownContent.style.display = isVisible ? 'none' : 'block';
+        });
+
+        // Event listener untuk menutup dropdown jika pengguna mengklik di luar menu
+        document.addEventListener('click', (event) => {
+            if (!menuDropdown.contains(event.target) && !dropdownContent.contains(event.target)) {
+                dropdownContent.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
